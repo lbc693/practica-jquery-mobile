@@ -1,136 +1,148 @@
 <!doctype html>
-<html class='no-js'>
+<html class="no-js">
 
 <head>
-  <meta charset='utf-8'>
-  <title>practica jquery mobile</title>
-  <meta name='description' content=''>
-  <meta name='viewport' content='width=device-width'>
-  <link rel='shortcut icon' href='/favicon.ico'>
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <!-- build:css(.) styles/vendor.css -->
-  <!-- bower:css -->
-  <!-- endbower -->
-  <!-- endbuild -->
-  <!-- build:css(.tmp) styles/main.css -->
-  <link rel='stylesheet' href='styles/main.css'>
-  <link rel='stylesheet' href='../jquery.mobile-1.4.5/jquery.mobile-1.4.5.css' />
-  <!-- endbuild -->
+    <meta charset="utf-8">
+    <title>practica jquery mobile</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" />
+    <!-- endbuild -->
 </head>
 
 <body>
 
-  <!-- Main Page-->
-  <div data-role="page" id="main">
-    <div data-role="header">
-      <a href="index.html" data-icon="delete">Cancelar</a>
-      <h1>
-        Pedir pizza
-      </h1>
-      <a href="index.html" data-icon="check">Guardar</a>
-    </div>
-    <div data-role="content">
-      <form action="#" method="get">
-        <h2>
-          Formulario para pedir una pizza:
-        </h2>
-        <div data-role="fieldcontain">
-          <fieldset data-role="controlgroup">
-            <legend>
-              Escoje la base:
-            </legend>
-            <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
-            <label for="radio-choice-1">
-              Fina y crujiente
-            </label>
-            <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2" />
-            <label for="radio-choice-2">
-              Queso gratinado
-            </label>
-            <input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3" />
-            <label for="radio-choice-3">
-              Gorda y esponjosa
-            </label>
-          </fieldset>
-        </div>
-        <div data-role="fieldcontain">
-          <fieldset data-role="controlgroup">
-            <legend>
-              Elige los ingredientes de la pizza:
-            </legend>
-            <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
-            <label for="checkbox-1a">
-              Champiñones
-            </label>
-            <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
-            <label for="checkbox-2a">
-              Aceitunas negras
-            </label>
-            <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
-            <label for="checkbox-3a">
-              Pimientos
-            </label>
-            <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
-            <label for="checkbox-4a">
-              Cebolla
-            </label>
-          </fieldset>
-        </div>
-        <div data-role="fieldcontain">
-          <fieldset data-role="controlgroup" data-type="horizontal">
-            <legend>
-              Ingredientes para no vegetarianos:
-            </legend>
-            <input type="checkbox" name="checkbox-6" id="checkbox-6" class="custom" />
-            <label for="checkbox-6">
-              Chorizo
-            </label>
-            <input type="checkbox" name="checkbox-7" id="checkbox-7" class="custom" />
-            <label for="checkbox-7">
-              Jamón Serrano
-            </label>
-            <input type="checkbox" name="checkbox-8" id="checkbox-8" class="custom" />
-            <label for="checkbox-8">
-              Carne picada
-            </label>
-          </fieldset>
-        </div>
-        <div data-role="fieldcontain">
-          <fieldset data-role="controlgroup" data-type="horizontal">
-            <legend>
-              Forma de pago:
-            </legend>
-            <input type="radio" name="radio-choice-b" id="radio-choice-c" value="on" checked="checked" />
-            <label for="radio-choice-c">
-              Metálico
-            </label>
-            <input type="radio" name="radio-choice-b" id="radio-choice-d" value="off" />
-            <label for="radio-choice-d">
-              Cupón
-            </label>
-            <input type="radio" name="radio-choice-b" id="radio-choice-e" value="other" />
-            <label for="radio-choice-e">
-              Tarjeta crédito
-            </label>
-          </fieldset>
-        </div>
-      </form>
-    </div>
-    <div data-role="footer">
-      <p>Pizzeria CPIFP Los Enlaces </p>
-    </div>
-  </div>
+    <!-- Start of first page -->
+    <div data-role="page" id="login">
 
-  <!-- build:js(.) scripts/vendor.js -->
-  <!-- bower:js -->
-  <script src='bower_components/jquery/dist/jquery.js'></script>
-  <!-- endbower -->
-  <!-- endbuild -->
+        <div data-role="header">
+            <h1>Autenticacion de Usuario</h1>
+        </div>
+        <div data-role="content">
+            <form id="formulario" action="#listaAlumnos">
+                <label> Usuario </label>
+                <input type="text" id="nombredeusuario" name="nombredeusuario">
+                <label> Password </label>
+                <input type="password" id="clave" name="clave">
 
-  <!-- build:js({app,.tmp}) scripts/main.js -->
-  <script src='scripts/main.js'></script>
-  <script src='../jquery.mobile-1.4.5/jquery.mobile-1.4.5.js'></script>
-  <!-- endbuild -->
+                <input type="submit" value="Login" id="botonLogin">
+            </form>
+        </div>
+        <!-- /footer -->
+        <!--
+ <div data-role="header" data-theme="c">
+<h1>Book It</h1>
+</div>
+<div role="main" class="ui-content">
+<h3>Sign In</h3>
+<label for="txt-email">Email Address</label>
+<input type="text" name="txt-email" id="txt-email" value="">
+<label for="txt-password">Password</label>
+<input type="password" name="txt-password" id="txt-password" value="">
+<fieldset data-role="controlgroup">
+<input type="checkbox" name="chck-rememberme" id="chck-rememberme" checked="">
+<label for="chck-rememberme">Remember me</label>
+</fieldset>
+<a href="#dlg-invalid-credentials" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Submit</a>
+<p class="mc-top-margin-1-5"><a href="begin-password-reset.html">Can't access your account?</a></p>
+<div data-role="popup" id="dlg-invalid-credentials" data-dismissible="false" style="max-width:400px;">
+<div role="main" class="ui-content">
+<h3 class="mc-text-danger">Login Failed</h3>
+<p>Did you enter the right credentials?</p>
+<div class="mc-text-center"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">OK</a></div>
+</div>
+</div>
+</div>
+-->
+    </div>
+    <!-- /page -->
+
+    <!-- Start of second page -->
+    <div data-role="page" id="listaAlumnos">
+
+        <div data-role="header">
+            <h1>Listado de alumnos</h1>
+        </div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+            <form>
+                <input id="filter-for-listview" data-type="search" placeholder="Type to search...">
+            </form>
+            <ul data-role="listview" data-inset="true" data-filter="true" data-input="#filter-for-listview">
+                <li><a href="#evaluar">Alumno1 Ap1 Ap1</a>
+                </li>
+                <li><a href="#evaluar">Alumno2 Ap2 Ap2</a>
+                </li>
+                <li><a href="#evaluar">Alumno3 Ap3 Ap3</a>
+                </li>
+                <li><a href="#evaluar">Alumno4 Ap4 Ap4</a>
+                </li>
+                <li><a href="#evaluar">Alumno5 Ap5 Ap5</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4>Pie del listado de alumnos</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+
+    <!-- Start of second page -->
+    <div data-role="page" id="evaluar">
+
+        <div data-role="header">
+            <h1>Evaluación</h1>
+        </div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+            <form>
+                <input id="filter-for-listview" data-type="search" placeholder="Type to search...">
+            </form>
+            <ul data-role="listview" data-inset="true" data-filter="true" data-input="#filter-for-listview">
+                <li><a href="#evaluar">Alumno1 Ap1 Ap1</a>
+                </li>
+                <li><a href="#evaluar">Alumno2 Ap2 Ap2</a>
+                </li>
+                <li><a href="#evaluar">Alumno3 Ap3 Ap3</a>
+                </li>
+                <li><a href="#evaluar">Alumno4 Ap4 Ap4</a>
+                </li>
+                <li><a href="#evaluar">Alumno5 Ap5 Ap5</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4>Pie del listado de alumnos</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="../jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>
