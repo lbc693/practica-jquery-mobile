@@ -1,24 +1,16 @@
+'use strict';
 console.log('\'Allo \'Allo!');
-$('#formulario').submit(function() {
-    // recolecta los valores que inserto el usuario
-    var datosUsuario = $("#nombredeusuario").val();
-    var datosPassword = $("#clave").val();
-    /*
-    archivoValidacion = "http://revolucion.mobi/ejemplos/phonegap/envioFormulario/validacion_de_datos.php?jsoncallback=?"
-    $.getJSON(archivoValidacion, {
-            usuario: datosUsuario,
-            password: datosPassword
-        })
-        .done(function(respuestaServer) {
-            alert(respuestaServer.mensaje + "\nGenerado en: " + respuestaServer.hora + "\n" + respuestaServer.generador)
-            if (respuestaServer.validacion == "ok") {
-                /// si la validacion es correcta, muestra la pantalla "home"
-                $.mobile.changePage("#home")
-            } else {
-                /// ejecutar una conducta cuando la validacion falla
-            }
-        })
-    return false;
-    */
-    $.mobile.changePage("#listaAlumnos");
+
+$('#formulario').submit(function(e) {
+    e.preventDefault();
+    $.mobile.changePage('#listaAlumnos');
+});
+
+$('#lvAlumnos').children('li').on('click', function() {
+    var i = $(this).index();
+    console.log('Selected Index = ' + i);
+    //  console.log(this);
+    var alumno = $(this).text();
+    console.log('Seleccionado: ' + alumno);
+    $('#nombreAlumno').text(alumno);
 });
