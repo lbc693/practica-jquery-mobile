@@ -9,13 +9,20 @@ root = true
 
 # Change these settings to your own preference
 indent_style = space
+<<<<<<< HEAD
 indent_size = 2
+=======
+indent_size = 4
+>>>>>>> c92617766ba1488f314afc63c69f2e6872b41951
 
 # We recommend you to keep these unchanged
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
+<<<<<<< HEAD
 
 [*.md]
 trim_trailing_whitespace = false
+=======
+>>>>>>> c92617766ba1488f314afc63c69f2e6872b41951

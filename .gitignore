@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 node_modules
 dist
 .tmp
 bower_components
+=======
+temp
+dist
+node_modules
+>>>>>>> c92617766ba1488f314afc63c69f2e6872b41951

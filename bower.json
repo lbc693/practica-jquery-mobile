@@ -1,7 +1,15 @@
 {
   "name": "practica-jquery-mobile",
+<<<<<<< HEAD
   "private": true,
   "dependencies": {
     "jquery": "~1.11.1"
   }
 }
+=======
+  "version": "0.0.0",
+  "dependencies": {
+  },
+  "devDependencies": {}
+}
+>>>>>>> c92617766ba1488f314afc63c69f2e6872b41951
