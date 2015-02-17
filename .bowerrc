@@ -1,3 +1,11 @@
 {
+<<<<<<< HEAD
   "directory": "bower_components"
+=======
+<<<<<<< HEAD
+  "directory": "bower_components"
+=======
+    "directory": "app/components"
+>>>>>>> c92617766ba1488f314afc63c69f2e6872b41951
+>>>>>>> 12779c1112032a12150e282f8a63c163d94ba870
 }
