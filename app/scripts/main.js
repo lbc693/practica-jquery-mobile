@@ -3,7 +3,7 @@ console.log('\'Allo \'Allo!');
 
 $('#formulario').submit(function(e) {
     e.preventDefault();
-    $.mobile.changePage('#listaAlumnos');
+    $.mobile.changePage('#listaCursos');
 });
 
 $('#lvAlumnos').children('li').on('click', function() {
@@ -12,5 +12,5 @@ $('#lvAlumnos').children('li').on('click', function() {
     //  console.log(this);
     var alumno = $(this).text();
     console.log('Seleccionado: ' + alumno);
-    $('#nombreAlumno').text(alumno);
+    $('.nombreAlumno').text(alumno);
 });
