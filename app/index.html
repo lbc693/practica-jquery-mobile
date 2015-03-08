@@ -47,23 +47,23 @@
 		<div role="main" class="ui-content">
 			<ul id="lvCursos" data-role="listview" data-inset="true" data-filter="true" data-input="#filter-for-listview">
 				<li data-name="a">
-					<a href="#listaAlumnos">1º AAA</a>
+					<a href="#listaAlumnos" data-transition="slide">1º AAA</a>
 				</li>
 				<li data-name="b">
-					<a href="#listaAlumnos">2º AAA</a>
+					<a href="#listaAlumnos" data-transition="slide">2º AAA</a>
 				</li>
 				<li data-name="c">
-					<a href="#listaAlumnos">1º BBB</a>
+					<a href="#listaAlumnos" data-transition="slide">1º BBB</a>
 				</li>
 				<li data-name="d">
-					<a href="#listaAlumnos">2º BBB</a>
+					<a href="#listaAlumnos" data-transition="slide">2º BBB</a>
 				</li>
 			</ul>
 		</div>
 		<!--/content-->
 		<div data-role="footer" data-id="footer">
 			<div class="center">
-				<a href="#login" class="ui-btn">Salir</a>
+				<a href="#dialogExit" class="ui-btn" data-rel="dialog">Salir</a>
 				<h4>Guía de calificación</h4>
 			</div>
 		</div>
@@ -72,7 +72,7 @@
 	<!--Página lista de alumnos-->
 	<div data-role="page" id="listaAlumnos">
 		<div data-role="header" data-position="fixed" >
-			<a href="#listaCursos" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"  data-role="button" role="button">Back</a>
+			<a href="#listaCursos" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"  data-role="button" role="button" data-transition="slide" data-direction="reverse">Back</a>
 			<h1>Alumnos</h1>
 		</div>
 		<!--/header-->
@@ -82,26 +82,26 @@
 			</form>
 			<ul id="lvAlumnos" data-role="listview" data-inset="true" data-filter="true" data-input="#filter-for-listview">
 				<li data-name="a">
-					<a href="#evaluar">Aaaa Aa Aa</a>
+					<a href="#evaluar" data-transition="slide">Aaaa Aa Aa</a>
 				</li>
 				<li data-name="b">
-					<a href="#evaluar">Bbbb Bb Bb</a>
+					<a href="#evaluar" data-transition="slide">Bbbb Bb Bb</a>
 				</li>
 				<li data-name="c">
-					<a href="#evaluar">Cccc Cc Cc</a>
+					<a href="#evaluar" data-transition="slide">Cccc Cc Cc</a>
 				</li>
 				<li data-name="d">
-					<a href="#evaluar">Dddd Dd Dd</a>
+					<a href="#evaluar" data-transition="slide">Dddd Dd Dd</a>
 				</li>
 				<li data-name="e">
-					<a href="#evaluar">Eeee Ee Ee</a>
+					<a href="#evaluar" data-transition="slide">Eeee Ee Ee</a>
 				</li>
 			</ul>
 		</div>
 		<!--/content-->
 		<div data-role="footer" data-id="footer">
 			<div class="center">
-				<a href="#login" class="ui-btn">Salir</a>
+				<a href="#dialogExit" class="ui-btn" data-rel="dialog">Salir</a>
 				<h4>Guía de calificación</h4>
 			</div>
 		</div>
@@ -111,7 +111,8 @@
 	<div data-role="page" id="evaluar" class="ev">
 		<div data-role="header">
 			<h1 class="nombreAlumno">Contenido del proyecto</h1>
-			<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"  data-role="button" role="button">Back</a>
+			<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all" data-transition="slide" data-direction="reverse">Back</a>
+			<a href="#dialogSave" class="ui-btn-right ui-icon-check ui-btn ui-btn-icon-notext ui-shadow ui-corner-all"  data-transition="pop"  data-rel="dialog">Back</a>
 		</div>
 		<!--/header-->
 		<div role="main" class="ui-content">
@@ -129,6 +130,8 @@
 						</li>
 					</ul>
 				</div><!-- /navbar -->
+
+
 				<form>
 					<div id="evContenido" class="ui-content">				
 						<ul data-role="listview" data-inset="true" data-shadow="false">
@@ -190,7 +193,7 @@
 						</ul>
 					</div>
 					<div id="evPresentacion" class="ui-content">				
-						<ul data-role="listview">
+						<ul data-role="listview"  data-inset="true" >
 							<li>
 								<label for="slider-1">Presentación escrita</label>
 								<input name="slider-1" id="slider-1" min="0" max="10" value="5" type="range">
@@ -331,22 +334,43 @@
 			<!--/content-->
 			<div data-role="footer">
 				<div class="center">
-					<a href="#login" class="ui-btn">Salir</a>
+					<a href="#dialogExit" class="ui-btn" data-rel="dialog">Salir</a>
 					<h4>Guía de calificación</h4>
 				</div>     
 			</div>
 			<!--/footer-->
 		</div>
-		<!--/page-->
-		<!--build:js(.) scripts/vendor.js-->
-		<!--bower:js-->
-		<script src="bower_components/jquery/dist/jquery.js"></script>
-		<!--endbower-->
-		<!--endbuild-->
-		<!--build:js({app,.tmp}) scripts/main.js-->
-		<script src="scripts/main.js"></script>
-		<script src="../jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
-		<!--endbuild-->
 	</div>
+	<!--/page-->
+
+	<div id="dialogSave" data-role="dialog" data-close-btn="none">
+		<div data-role="header">
+			<h2>Datos guardados</h2>
+		</div>
+		<div role="main" class="ui-content">
+			<p>Las calificaciones se han guardado</p>
+			<a href="#" data-rel="back" data-role="button">Aceptar</a>
+		</div>
+	</div>
+	<div id="dialogExit" data-role="dialog" data-close-btn="none">
+		<div data-role="header">
+			<h2>¿Salir?</h2>
+		</div>
+		<div role="main" class="ui-content">
+			<p>¿Seguro que quieres salir?</p>
+			<a href="#login" data-role="button" data-inline="true">Aceptar</a>
+			<a href="#" data-rel="back" data-role="button" data-inline="true">Cancelar</a>
+		</div>
+	</div>
+	<!--build:js(.) scripts/vendor.js-->
+	<!--bower:js-->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<!--endbower-->
+	<!--endbuild-->
+	<!--build:js({app,.tmp}) scripts/main.js-->
+	<script src="scripts/main.js"></script>
+	<script src="../jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+	<!--endbuild-->
+</div>
 </body>
 </html>
