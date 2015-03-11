@@ -1,4 +1,3 @@
-'use strict';
 console.log('\'Allo \'Allo!');
 
 $('#formulario').submit(function(e) {
