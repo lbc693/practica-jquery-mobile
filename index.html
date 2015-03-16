@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Practica jquery-mobile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <script src="./scripts/main.js"></script>
+</head>
+
+<body>
+    <!--Página login-->
+    <div data-role="page" id="login">
+        <div data-role="header">
+            <h1>Autenticación</h1>
+        </div>
+        <div data-role="content">
+            <form id="formulario" action="#listaCursos" method="POST">
+                <label for="nombreUsuario">Usuario</label>
+                <input type="text" id="nombreUsuario" name="nombreUsuario">
+                <label for="passwordUsuario">Password</label>
+                <input type="password" id="passwordUsuario" name="clave">
+                <fieldset data-role="controlgroup">
+                    <input type="checkbox" name="chck-rememberme" id="chck-rememberme" checked="">
+                    <label for="chck-rememberme">Remember me</label>
+                </fieldset>
+                <a data-role="button" href="#listaCursos" id="botonLogin">Login</a>
+            </form>
+        </div>
+    </div>
+    <!--Página lista de cursos-->
+    <div data-role="page" id="listaCursos">
+        <div data-role="header" data-position="fixed">
+            <h1>Cursos</h1>
+        </div>
+        <!--/header-->
+        <div role="main" class="ui-content">
+            <ul id="lvCursos" data-role="listview" data-inset="true" data-filter="true" data-input="#filter-for-listview">
+                <li data-name="a">
+                    <a href="#listaAlumnos" data-transition="slide">1º AAA</a>
+                </li>
+                <li data-name="b">
+                    <a href="#listaAlumnos" data-transition="slide">2º AAA</a>
+                </li>
+                <li data-name="c">
+                    <a href="#listaAlumnos" data-transition="slide">1º BBB</a>
+                </li>
+                <li data-name="d">
+                    <a href="#listaAlumnos" data-transition="slide">2º BBB</a>
+                </li>
+            </ul>
+        </div>
+        <!--/content-->
+        <div data-role="footer" data-id="footer">
+            <div class="center">
+                <a href="#dialogExit" class="ui-btn" data-rel="dialog">Salir</a>
+                <h4>Guía de calificación</h4>
+            </div>
+        </div>
+        <!--/footer-->
+    </div>
+    <!--Página lista de alumnos-->
+    <div data-role="page" id="listaAlumnos">
+        <div data-role="header" data-position="fixed">
+            <a href="#listaCursos" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button" data-transition="slide" data-direction="reverse">Back</a>
+            <h1>Alumnos</h1>
+        </div>
+        <!--/header-->
+        <div role="main" class="ui-content">
+            <form>
+                <input id="filter-for-listview" data-type="search" placeholder="Type to search...">
+            </form>
+            <ul id="lvAlumnos" data-role="listview" data-inset="true" data-filter="true" data-input="#filter-for-listview">
+                <li data-name="a">
+                    <a href="#evaluar" data-transition="slide">Aaaa Aa Aa</a>
+                </li>
+                <li data-name="b">
+                    <a href="#evaluar" data-transition="slide">Bbbb Bb Bb</a>
+                </li>
+                <li data-name="c">
+                    <a href="#evaluar" data-transition="slide">Cccc Cc Cc</a>
+                </li>
+                <li data-name="d">
+                    <a href="#evaluar" data-transition="slide">Dddd Dd Dd</a>
+                </li>
+                <li data-name="e">
+                    <a href="#evaluar" data-transition="slide">Eeee Ee Ee</a>
+                </li>
+            </ul>
+        </div>
+        <!--/content-->
+        <div data-role="footer" data-id="footer">
+            <div class="center">
+                <a href="#dialogExit" class="ui-btn" data-rel="dialog">Salir</a>
+                <h4>Guía de calificación</h4>
+            </div>
+        </div>
+        <!--/footer-->
+    </div>
+    <!--Página para calificar-->
+    <div data-role="page" id="evaluar" class="ev">
+        <div data-role="header">
+            <h1 class="nombreAlumno">Contenido del proyecto</h1>
+            <a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all" data-transition="slide" data-direction="reverse">Back</a>
+            <a href="#dialogSave" class="ui-btn-right ui-icon-check ui-btn ui-btn-icon-notext ui-shadow ui-corner-all" data-transition="pop" data-rel="dialog">Back</a>
+        </div>
+        <!--/header-->
+        <div role="main" class="ui-content">
+            <div data-role="tabs">
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a href="#evContenido" class="ui-btn-active ui-state-persist">Proyecto</a>
+                        </li>
+                        <li>
+                            <a href="#evPresentacion">Presentación</a>
+                        </li>
+                        <li>
+                            <a href="#evExprOral">Oral</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /navbar -->
+
+
+                <form>
+                    <div id="evContenido" class="ui-content">
+                        <ul data-role="listview" data-inset="true" data-shadow="false">
+                            <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                                <h2>Planteamiento</h2>
+                                <ul data-role="listview">
+                                    <li>
+                                        <label for="slider-1">Objetivos</label>
+                                        <input name="slider-1" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Recursos utilizados</label>
+                                        <input name="slider-1" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Destinatarios</label>
+                                        <input name="slider-1" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Justificación del proyecto</label>
+                                        <input name="slider-1" min="0" max="10" value="5" type="range">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                                <h2>Contenido</h2>
+                                <ul data-role="listview">
+                                    <li>
+                                        <label for="slider-1">Metodología seguida</label>
+                                        <input name="slider-1" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Claridad</label>
+                                        <input name="slider-1" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Actividades o acciones realizadas</label>
+                                        <input name="slider-1" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Documentación elaborada</label>
+                                        <input name="slider-1" min="0" max="10" value="5" type="range">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                                <h2>Resultados obtenidos</h2>
+                                <ul data-role="listview">
+                                    <li>
+                                        <label for="slider-1">Conclusiones</label>
+                                        <input name="slider-1" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1"> Objetivos conseguidos y grado de consecución</label>
+                                        <input name="slider-1" min="0" max="10" value="5" type="range">
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="evPresentacion" class="ui-content">
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <label for="slider-1">Presentación escrita</label>
+                                <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                            </li>
+                            <li>
+                                <label for="slider-1">Redacción y claridad del texto</label>
+                                <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                            </li>
+                            <li>
+                                <label for="slider-1">Organización del contenido</label>
+                                <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="evExprOral" class="ui-content">
+                        <ul data-role="listview" data-inset="true" data-shadow="false">
+                            <li>
+                                <label for="slider-1">Entrada del alumno</label>
+                                <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                            </li>
+                            <li>
+                                <label for="slider-1">Indumentaria</label>
+                                <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                            </li>
+                            <li>
+                                Introducción
+                                <ul>
+                                    <li>
+                                        <label for="slider-1">Atractivo</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Claridad</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Desarrollo
+                                <ul>
+                                    <li>
+                                        <label for="slider-1">Orden en las ideas</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Claridad en la exposición</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Aclaración de términos técnicos</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <label for="slider-1">Conclusión</label>
+                                <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                            </li>
+                            <li>
+                                <label for="slider-1">Seguridad</label>
+                                <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                            </li>
+                            <li>
+                                <label for="slider-1">Entusiasmo</label>
+                                <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                            </li>
+                            <li>
+                                Expresión oral
+                                <ul>
+                                    <li>
+                                        <label for="slider-1">Entonación</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Volumen</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Velocidad</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Vacilación en la voz</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Pausas</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Utilización de muletillas</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <label for="slider-1">Duración</label>
+                                <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                            </li>
+                            <li>
+                                Lenguaje no verbal
+                                <ul>
+                                    <li>
+                                        <label for="slider-1">Mirada</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Sonrisa/expresión facial positiva</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Posición correcta del cuerpo</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Vacilación en la voz</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                    <li>
+                                        <label for="slider-1">Tics, gestos nerviosos</label>
+                                        <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <label for="slider-1">Atención del público</label>
+                                <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                            </li>
+                            <li>
+                                <label for="slider-1">Coherencia en las preguntas</label>
+                                <input name="slider-1" "" min="0" max="10" value="5" type="range">
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+
+            </div>
+            <!--/content-->
+            <div data-role="footer">
+                <div class="center">
+                    <a href="#dialogExit" class="ui-btn" data-rel="dialog">Salir</a>
+                    <h4>Guía de calificación</h4>
+                </div>
+            </div>
+            <!--/footer-->
+        </div>
+    </div>
+    <!--/page-->
+
+    <div id="dialogSave" data-role="dialog" data-close-btn="none">
+        <div data-role="header">
+            <h2>Datos guardados</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <p>Las calificaciones se han guardado</p>
+            <a href="#" data-rel="back" data-role="button">Aceptar</a>
+        </div>
+    </div>
+    <div id="dialogExit" data-role="dialog" data-close-btn="none">
+        <div data-role="header">
+            <h2>¿Salir?</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <p>¿Seguro que quieres salir?</p>
+            <a href="#login" data-role="button" data-inline="true">Aceptar</a>
+            <a href="#" data-rel="back" data-role="button" data-inline="true">Cancelar</a>
+        </div>
+    </div>
+</body>
+
+</html>

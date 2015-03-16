@@ -1,7 +1,0 @@
-{
-  "name": "practica-jquery-mobile",
-  "private": true,
-  "dependencies": {
-    "jquery": "~1.11.1"
-  }
-}
